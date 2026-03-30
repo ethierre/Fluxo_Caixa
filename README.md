@@ -54,16 +54,21 @@ npm start
 docker compose up -d sqlserver rabbitmq redis
 
 # Terminal 2 — API de Lançamentos (porta 5001)
-cd src/Services/FluxoCaixa.Lancamentos.Api && dotnet run
+cd src/Services/FluxoCaixa.Lancamentos.Api
+dotnet run
 
 # Terminal 3 — API do Consolidado (porta 5002)
-cd src/Services/FluxoCaixa.Consolidado.Api && dotnet run
+cd src/Services/FluxoCaixa.Consolidado.Api
+dotnet run
 
 # Terminal 4 — API Gateway (porta 5000)
-cd src/Gateway/FluxoCaixa.Gateway && dotnet run
+cd src/Gateway/FluxoCaixa.Gateway
+dotnet run
 
 # Terminal 5 — Frontend
-cd frontend/fluxo-caixa-web && npm install && npm start
+cd frontend/fluxo-caixa-web
+npm install
+npm start
 ```
 
 > As migrations são aplicadas automaticamente na inicialização de cada serviço.
@@ -186,7 +191,7 @@ k6 run ./k6/consolidado_pico.js
 
 ## Decisões Arquiteturais
 
-Consulte [`arquitetura_fluxo_caixa.md`](./arquitetura_fluxo_caixa.md) para a documentação técnica completa, incluindo:
+Consulte [`README_arquitetura_fluxo_caixa.md`](./README_arquitetura_fluxo_caixa.md) para a documentação técnica completa, incluindo:
 
 - Justificativa da separação em microsserviços com mensageria assíncrona
 - Decisões sobre CQRS, DDD e Clean Architecture
